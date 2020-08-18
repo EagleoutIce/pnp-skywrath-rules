@@ -1,0 +1,56 @@
+\documentclass{pnp-skywrath}
+
+\usepackage{tikzsymbols,imakeidx}
+\usepackage[english, main=ngerman]{babel}
+
+\input{shortcuts.src}
+
+% index setup
+\makeindex[title=Schlagworte,options=-s configs/index,columns=2,columnsep=0.75cm]\renewcommand{\indexname}{Schlagworte}
+
+\title{Das Skywrath-Regelwerk}
+\subtitle{Für das P\&P \say{Das Leid der Anderen}}
+\author{Florian Sihler}
+
+\toctitle{Content}
+
+\definecolor{cprimary}{RGB}{195,33,72}
+
+\begin{document}
+    \maketitle
+    \TableOfContents
+
+    \begin{abstract}[Achtung:]
+Aus einer Mischung aus Zeitgründen und Nachfrage ist diese weitere Zwischenversion entstanden in der immer noch ordentlich was fehlt, die aber hinsichtlich der Charaktererstellung weitere wichtige Punkte vermittelt. Bitte nochmal ganz lesen. Es hat sich bisschen was auch in dem bereits bestehenden geändert!\\
+\hbox{}\hfill{}{\footnotesize Fassung vom: \today}
+    \end{abstract}
+    
+    \section{Ein Vorwort}
+    \input{parts/1_vorwort.tex}
+
+    \section{Die Charaktererstellung}
+    \input{parts/2_charaktererstellung.tex}
+
+    \clearpage
+    \section{Der Charakterbogen}
+    \input{parts/3_charakterbogen.tex}
+
+    \clearpage
+    \section{Das Fertigkeitenkompendium}
+    \input{parts/4_fertigkeitenkompendium.tex}
+
+    \clearpage
+    \section{Der Kampf}
+    \input{parts/5_kampf.tex}
+
+    \clearpage
+    \section{Die Gegenstände}
+    \input{parts/6_items.tex}
+
+    \clearpage
+    \section{Die Missionen}
+    \input{parts/7_missionen.tex}
+
+    \appendix
+    \printindex
+\end{document}

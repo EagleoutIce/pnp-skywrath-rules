@@ -1,0 +1,9 @@
+\long\def\say#1{\glqq{#1}\grqq{}} 
+\long\def\imp#1{\emph{\color{cprimary}#1}}
+
+\renewenvironment{quote}[1][]{\gdef\curquoteauthor{#1}\bgroup\itshape}{\egroup\expandafter\ifx\expandafter\\\curquoteauthor\\\else\leavevmode\\\hbox{}\hfill\footnotesize{\curquoteauthor}\\\fi}
+
+\newcommand\link[2][]{\hyperref[#1]{\textit{#2}\,\textsuperscript{\color{gray}\smaller\raisebox{1pt}{$\rightarrow\,$}\textit{\pageref*{#1}}}}}
+
+% used by the index
+\def\setLinkColor#1{\hypersetup{linkcolor=#1}}
