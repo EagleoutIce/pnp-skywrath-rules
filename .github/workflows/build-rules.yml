@@ -24,7 +24,9 @@ jobs:
   
       - name: Checkout submodules
         uses: textbook/git-checkout-submodule-action@master
-
+        with:
+            remote: true
+    
       - name: Compile LaTeX document
         uses: xu-cheng/latex-action@v2
         with:
