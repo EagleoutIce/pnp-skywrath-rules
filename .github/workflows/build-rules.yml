@@ -33,7 +33,7 @@ jobs:
         run: |
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action"
-          git add skywrath-regelwerk.pdf
+          git add -f skywrath-regelwerk.pdf
           git commit -m "Update PDF by Workflow"
           
       - name: Push changes
