@@ -1,5 +1,5 @@
 \long\def\say#1{\glqq{#1}\grqq{}} 
-\long\def\imp#1{\emph{\color{cprimary}#1}}
+\long\def\imp#1{\textbf{\color{cprimary}#1}}
 
 \renewenvironment{quote}[1][]{\gdef\curquoteauthor{#1}\bgroup\itshape}{\egroup\expandafter\ifx\expandafter\\\curquoteauthor\\\else\leavevmode\\\hbox{}\hfill\footnotesize{\curquoteauthor}\\\fi}
 
@@ -9,8 +9,8 @@
 \def\setLinkColor#1{\hypersetup{linkcolor=#1}}
 
 % specific and global points
-\newcommand*\SP[1][]{\ifx\\#1\\\else#1\,\fi{\smaller\faCircleThin}}
-\newcommand*\GP[1][]{\ifx\\#1\\\else#1\,\fi{\smaller\faCircle}}
+\newcommand*\SP[1][]{\ifx\\#1\\\else#1\;\fi{\smaller\faCircleThin}}
+\newcommand*\GP[1][]{\ifx\\#1\\\else#1\;\fi{\smaller\faCircle}}
 
 
 \newenvironment{sccenter}
