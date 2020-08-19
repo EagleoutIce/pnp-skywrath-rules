@@ -3,4 +3,4 @@
 # pnp-skywrath-rules
 Das Repository für das "Skywrath-Regelwerk".
 
-The most up-to-date pdf should be found [here](https://eagleoutice.github.io/pnp-skywrath-rules/skywrath-regelwerk.pdf) or [here](https://eagleoutice.github.io/pnp-skywrath-rules/index.html).
+The most up-to-date pdf should be found [here](https://media.githubusercontent.com/media/EagleoutIce/pnp-skywrath-rules/gh-pages/skywrath-regelwerk.pdf) or [here](https://github.com/EagleoutIce/pnp-skywrath-rules/blob/gh-pages/skywrath-regelwerk.pdf).
