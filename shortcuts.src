@@ -15,3 +15,6 @@
 \newenvironment{sccenter}
  {\setlength\parskip{4.5pt}\par\nopagebreak\centering}
  {\par\noindent\ignorespacesafterend}
+
+\DeclareMathOperator{\w}{\mathit{w}}
+\def\dice#1#2{\ensuremath{#1\w#2}}

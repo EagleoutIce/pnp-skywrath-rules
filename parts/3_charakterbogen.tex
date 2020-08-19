@@ -22,7 +22,7 @@ Hierbei sei erst einmal gesagt, dass das endgültige Layout des Charakterbogens 
 Die Daten, die dort eingetragen werden sollen, sollten ohne große Erklärung funktionieren. Deswegen hopp hopp, und weiter geht die Reise\ldots
 
 \paragraph{Die Lebensversicherung}
-\begin{wrapfigure}{l}{0.45\linewidth}
+\begin{wrapfigure}{l}{0.375\linewidth}
     \centering\begin{tikzpicture}[lc/.style={below,scale=0.65,font=\itshape}]
         \draw[rounded corners] (0,0) rectangle ++(5.75,1.2);
         \draw (0.5,0.5) -- ++(2.25,0) node[lc,midway] {HP (2:1)} node[above,midway] {40/{\smaller40}};
@@ -33,6 +33,15 @@ Erstmal zu den \imp{Lebenspunkten (HP)}:
 Ihr startet mit 40, was nach verhältnismäßig wenig klingt aber schon ganz ordentlich ist im Verhältnis zum allgemeinen Schadenssystem. % TODO: LinK
 Die Kosten für Leben betragen \(2:1\) und können aus allen anderen Gruppen zusammengespart werden. Der Verkaufspreis ist invertiert, ein Lebenspunkt liefert also zwei Fertigkeitenpunkte (\SP).
 Die Lebenspunkte dürfen durch das verkaufen nicht auf oder unter Null gesetzt werden. Weniger Lebenspunkte werden aber auch hart bestraft\ldots
+
+Eure Lebenspunkte sind den folgenden Regeln unterworfen:
+\begin{itemize}
+    \item Fällt die Anzahl der Lebenspunkte aus einem beliebigen Grund auf oder unter \(0\) so scheidet der Charakter umgehend aus. In diesem Fall ist ein neuer Charakter zu erstellen, dessen Level zwei unter dem des bisher niedrigsten Gruppenlevels ist\footnote{Das Level kann über diese Mechanik nicht unter \(1\) gesetzt werden.}.
+    \item Verursacht ein Angriff mindestens so viel Schaden wie die Hälfte der aktuellen Lebenspunkte, so ist eine Probe zu werfen (hier erscheint eine Referenz, sobald es diese Probe gibt). % TODO: link
+    \item Fällt die Anzahl der Lebenspunkte unter \(5\), so gilt der Charakter als \imp{schwer verwundet} und kann eigenhändig keine Aktionen wie laufen, oder gar kämpfen durchführen.
+    \item Jegliche Form von Heilung (egal ob magisch oder physisch) lässt sich für jede Wunde nur einmal pro Tag\footnote{Solche Begrenzungen setzen wir lose auf \say{alle \(24\)} Stunden, nicht das einer um Mitternacht direkt zwei Bandagen anbringen möchte.} anwenden.
+    \item Eine vom Spielmeister als \say{angenehm} eingestufte Nacht stellt \(\dice{1}{6} + 1\) Leben wieder her, sofern am Tag mindestens einmal am Tag gegessen wurde. Es steht dem Spielmeister frei, Schaden für das Unterlassen einer Nahrungsaufnahme zu verteilen.
+\end{itemize}
 
 \subsection{Ausrüstung}
 
