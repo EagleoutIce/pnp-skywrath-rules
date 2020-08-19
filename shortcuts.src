@@ -7,3 +7,11 @@
 
 % used by the index
 \def\setLinkColor#1{\hypersetup{linkcolor=#1}}
+
+% specific and global points
+\def\SP{{\smaller\faCircleThin}}\def\GP{{\smaller\faCircle}}
+
+
+\newenvironment{sccenter}
+ {\setlength\parskip{4.5pt}\par\nopagebreak\centering}
+ {\par\noindent\ignorespacesafterend}
