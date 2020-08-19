@@ -29,8 +29,14 @@ jobs:
           root_file: skywrath-regelwerk.tex
 
       
-      - name: Upload PDF
-        uses: actions/upload-artifact@v2
+      - name: Commit PDF
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+          git add skywrath-regelwerk.pdf
+          git commit -m "Update PDF by Workflow"
+          
+      - name: Push changes
+        uses: ad-m/github-push-action@master
         with:
-          name: skywrath-regelwerk.pdf
-          path: skywrath-regelwerk.pdf
+          branch: "gh-pages"
