@@ -33,8 +33,6 @@ jobs:
         run: |
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action"
-          git checkout gh-pages
-          git pull
           git add -f skywrath-regelwerk.pdf
           git commit -m "Update PDF by Workflow"
           
@@ -43,3 +41,4 @@ jobs:
         with:
           branch: "gh-pages"
           github_token: ${{ secrets.GITHUB_TOKEN }}
+          force: true
