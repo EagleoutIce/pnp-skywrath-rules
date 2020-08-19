@@ -9,7 +9,8 @@
 \def\setLinkColor#1{\hypersetup{linkcolor=#1}}
 
 % specific and global points
-\def\SP{{\smaller\faCircleThin}}\def\GP{{\smaller\faCircle}}
+\newcommand*\SP[1][]{\ifx\\#1\\\else#1\,\fi{\smaller\faCircleThin}}
+\newcommand*\GP[1][]{\ifx\\#1\\\else#1\,\fi{\smaller\faCircle}}
 
 
 \newenvironment{sccenter}
