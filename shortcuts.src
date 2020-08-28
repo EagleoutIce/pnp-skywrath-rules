@@ -20,3 +20,6 @@
 \DeclareMathOperator{\w}{\mathit{w}}
 \definecolor{dice}{RGB}{158,123,66}
 \def\dice#1#2{\textcolor{dice}{\ensuremath{#1\w#2}}}
+
+\colorlet{ability}{dice}
+\def\ability#1{\textcolor{ability}{\MakeUppercase{#1}}}

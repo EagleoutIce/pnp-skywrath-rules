@@ -105,7 +105,7 @@ Die Waffen nicht offen zu tragen heißt aber nicht gleichsam, dass ihr sie verst
 \end{wrapfigure}
 
 \def\awimp#1{\index{Charakter!Angriffswerte!#1}\imp{#1}}
-\index{Charakter!Angriffswerte}Für den Angriff gibt es zwei grundlegende Werte, die \awimp{Attacke (ATK)} wie auch \awimp{Initiative INI}.
+\label{char:attack}\index{Charakter!Angriffswerte}Für den Angriff gibt es zwei grundlegende Werte, die \awimp{Attacke (ATK)} wie auch \awimp{Initiative INI}.
 Für letztere sind niedere Werte besser, da ein Zug bei jedem vielfachen des hochzählenden Initiativwertes ausgeführt werden darf. 
 Beide Werte werden von mir festgelegt und werden auf Basis der anderen
 Fertigkeiten im Folgenden berechnet\footnote{Die genaue Formel steht noch aus.}.
@@ -152,3 +152,82 @@ Die Stufen werden intern von mir vergeben. Ein passiver Wert kann keine aktive P
 Die genaue Umsetzung des Inventarsystems steht noch aus. Grob sagen wir, dass wir alles in der Ausrüstungs gestatten, was wir uns \say{logisch} vorstellen können. Zwölf Zelte? Eher unwahrscheinlich. Ein Zelt an den Rucksack drangepackt? Schon nachvollziehbarer. Die \link[char:strength]{Stärke} fließt mit in die Tragekapazität ein.
 
 \subsection{Fertigkeiten}
+
+\index{Fertigkeiten}Die Macht aller Mächte sammelt sich in den folgenden Gruppen. Um eine Fertigkeit zu steigern gibt es eine einfache Kostentabelle in vier Stufen:
+\begin{itemize}
+    \item Um auf die Punkte 1 bis 3 zu steigern, betragen die Kosten \SP[1].
+    \item Um auf die Punkte 4 bis 6 zu steigern, betragen die Kosten \SP[2].
+    \item Um auf die Punkte 7 bis 9 zu steigern, betragen die Kosten \SP[3].
+    \item Um auf die Punkte 10 und höher zu steigern, betragen die Kosten \SP[4].
+\end{itemize}
+Es gibt keine (künstliche) Obergrenze für das Steigern der Fertigkeiten. In den folgenden Erklärungen steht in den Klammern jeweils die Anzahl der \SP, die zu Beginn zur Verfügung stehen.
+
+\paragraph{Nahkampf (\SP[40])}
+
+\index{Fertigkeiten!Nahkampf}Im \emph{Nahkampf} gibt es acht Kategorien auf welche die Punkte verteilt werden können: \begin{multicols}{4}
+    \def\idnk#1{\index{Fertigkeiten!Nahkampf!#1}#1}%
+    \begin{itemize}
+        \item \idnk{Dolche}
+        \item \idnk{Peitschen}
+        \item \idnk{Schwerter}
+        \item \idnk{Stäbe}
+        \item \idnk{Fechtwaffen}
+        \item \idnk{Speere}
+        \item \idnk{Zweihänder}
+        \item \idnk{Faustkampf}
+    \end{itemize}
+\end{multicols}
+Auf die Kategorien wird mittels des \link[char:attack]{Attacke}-Werts direkt gewürfelt. Da nur ein Würfelwurf erfolgt ergeben die Werte hier zusammen mit dem Angriffs-Wert den Würfelwurf der im Falle eines Angriffs zu leisten ist. 
+% TODO: link Fertigkeitenkompendium
+
+\paragraph{Fernkampf (\SP[40])}
+
+\index{Fertigkeiten!Fernkampf}Im \emph{Fernkampf} gibt es ebenfalls acht Kategorien auf die sich Punkte verteilen lassen:
+\begin{multicols}{4}
+    \def\idfk#1{\index{Fertigkeiten!Fernkampf!#1}#1}%
+    \begin{itemize}
+        \item \idfk{Armbrust}
+        \item \idfk{Bogen}
+        \item \idfk{Blasrohr}
+        \item \idfk{Wurfmesser}
+        \item \idfk{Wurfspeere}
+        \item \idfk{Pistolen}
+        \item \idfk{Gewehre}
+        \item \idfk{Granaten}
+    \end{itemize}
+\end{multicols}
+Auch auf diese Kategorien wird mittels des \link[char:attack]{Attacke}-Werts direkt gewürfelt.
+
+\paragraph{Körperliches (\SP[28])}
+
+Es gibt zwölf körperliche Kategorien, auf die Punkte verteilt werden können.
+Auf jede der Kategorie muss gewürfelt werden. Die jeweiligen Werte sind den Fertigkeiten angefügt.
+Jeder Wurf ist, wie sonst auch, mit einem \dice{}{20} durchzuführen.
+\begin{multicols}{2}
+    \def\idkk#1#2{\index{Fertigkeiten!Körperliches!#1 \emph{(#2)}}#1 (#2)}%
+    \def\idk#1#2#3#4{\idkk{#1}{\ability{#2}, \ability{#3}, \ability{#4}}}%
+    \begin{itemize}
+        \item \idk{Athletik}{str}{ges}{kon}
+        \item \idk{Reiten}{kon}{kon}{ges}
+        \item \idk{Bedrohen}{str}{str}{chr}
+        \item \idk{Diebstahl}{ges}{ges}{chr}
+        \item \idk{Gauklerei}{ges}{ges}{chr}
+        \item \idk{Schleichen}{kon}{ges}{ges}
+        \item \idk{Klettern}{str}{str}{kon}
+        \item \idk{Zechen}{kon}{kon}{kon}
+        \item \idk{Körperbeherrschung}{kon}{str}{str}
+        \item \idk{Schwimmen}{kon}{kon}{str}
+        \item \idk{Tanzen}{ges}{ges}{int}
+        \item \idk{Sinnesschärfe}{int}{int}{int}
+    \end{itemize}
+\end{multicols}
+
+\paragraph{Gesellschaftliches/Soziales (\SP[16])}
+
+\paragraph{Natur und Umwelt (\SP[16])}
+
+\paragraph{Wissen (\SP[28])}
+
+\paragraph{Handwerk (\SP[28])}
+
+\paragraph{Gaben (\SP{16})}
