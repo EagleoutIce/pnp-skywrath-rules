@@ -124,11 +124,16 @@ Fertigkeiten im Folgenden berechnet\footnote{Die genaue Formel steht noch aus.}.
 Es gibt sechs große Werte die jeweils auf eine \dice{}{20} Probe abzielen. 
 
 \def\hwimp#1{\index{Charakter!Hauptwerte!#1}\imp{#1}}
-\index{Charakter!Hauptwerte}Wir kennen die folgenden sechs Werte: \hwimp{Stärke (STR)}, \hwimp{Geschicklichkeit (GES)}, \hwimp{Konsitution (KON)}, \hwimp{Intuition (INT)}, \hwimp{Weisheit (WEI)}, \hwimp{Charisma (CHR)}.
+\index{Charakter!Hauptwerte}\label{char:strength}Wir kennen die folgenden sechs Werte: \hwimp{Stärke (STR)}, \hwimp{Geschicklichkeit (GES)}, \hwimp{Konsitution (KON)}, \hwimp{Intuition (INT)}, \hwimp{Weisheit (WEI)}, \hwimp{Charisma (CHR)}.
 Alle diese Werte starten mit einer 7, zu Beginn habt ihr 6 Punkte, die
 ihr \(1:1\) auf diese verteilen dürft.
-Anschließend können \GP{} eingesetzt werden um die Punkte weiter zu steigern. [Hier kommt noch eine Tabelle, wie diese Steigerung auszusehen hat]
-% TODO: skill up
+Anschließend können \GP{} eingesetzt werden um die Punkte weiter zu steigern.
+Dafür gelten die folgenden Kosten:
+\begin{itemize}
+    \item Um auf die Stufen 1 bis 11 zu gelangen, müssen je \GP[6] gezahlt werden.
+    \item Um auf die Stufen 12 bis 16 zu gelangen, müssen je \GP[12] gezahlt werden.
+    \item Um auf die Stufen 17 bis 19 zu gelangen, müssen je \GP[18] gezahlt werden.
+\end{itemize}
 
 \paragraph{Wahrnehmung}
 \begin{wrapfigure}[4]{r}{0.175\linewidth}
@@ -137,8 +142,13 @@ Anschließend können \GP{} eingesetzt werden um die Punkte weiter zu steigern. 
         \draw (0.5,0.5) -- ++(1.5,0) node[lc,midway] {PERC} node[above,midway] {2/{\smaller4}};
     \end{tikzpicture}
 \end{wrapfigure}
-Die \index{Charakter!Wahrnehmung}\imp{Wahrnehmung} ist besonders, da sie nur in vier Stufen gesteigert werden kann. [TODO: Continue]
+Die \index{Charakter!Wahrnehmung}\imp{Wahrnehmung} ist besonders, da sie nur in vier Stufen gesteigert werden kann und keine Fertigkeit ist auf die gewürfelt wird.
+Jeder startet hier mit einem Wert von 1 und kann jeweils mit \GP[4] gesteigert werden.
+Je höher der Wert, desto höher ist die grundlegende Aufmerksamkeit des Charakters.
+Die Stufen werden intern von mir vergeben. Ein passiver Wert kann keine aktive Probe ersetzen\footnote{Wenn man zum Beispiel eine Stelle auf Fallen überprüfen will, so muss dies durch eine Probe geschehen. Allerdings kann der passive Wert einen darauf hinweisen, dass ein Mann nach einer Waffe greift -- ohne dass man damit gerechnet hätte.}.
 
 \subsection{Inventar}
+
+Die genaue Umsetzung des Inventarsystems steht noch aus. Grob sagen wir, dass wir alles in der Ausrüstungs gestatten, was wir uns \say{logisch} vorstellen können. Zwölf Zelte? Eher unwahrscheinlich. Ein Zelt an den Rucksack drangepackt? Schon nachvollziehbarer. Die \link[char:strength]{Stärke} fließt mit in die Tragekapazität ein.
 
 \subsection{Fertigkeiten}

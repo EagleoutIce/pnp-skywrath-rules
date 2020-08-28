@@ -18,4 +18,5 @@
  {\par\noindent\ignorespacesafterend}
 
 \DeclareMathOperator{\w}{\mathit{w}}
-\def\dice#1#2{\ensuremath{#1\w#2}}
+\definecolor{dice}{RGB}{158,123,66}
+\def\dice#1#2{\textcolor{dice}{\ensuremath{#1\w#2}}}
