@@ -294,17 +294,86 @@ Die Kategorien \emph{Magie} und \emph{Magiekunde} unterscheidet, dass erstere pr
 
 \paragraph{Handwerk (\SP[28])}
 
-\index{Fertigkeiten!Handwerk}Die Handwerk umfasst 27 Kategorien auf welche die Punkte verteilt werden können. Es wird, wie überall sonst auch ein \dice{}{20} geworfen:
+\index{Fertigkeiten!Handwerk}Die Handwerk umfasst 24 Kategorien auf welche die Punkte verteilt werden können. Es wird, wie überall sonst auch ein \dice{}{20} geworfen:
 \begin{multicols}{2}
     \def\idhh#1#2{\index{Fertigkeiten!Handwerk!#1 \emph{\smaller(#2)}}#1 (#2)}%
     \def\idh#1#2#3#4{\idhh{#1}{\ability{#2}, \ability{#3}, \ability{#4}}}%
     \begin{itemize}
         \item \idh{Ackerbau}{kon}{str}{int}
+        \item \idh{Bäcker}{str}{int}{int}
+        \item \idh{Bergbau}{str}{str}{str}
+        \item \idh{Bogenbau}{str}{str}{ges}
+        \item \idh{Brauerei}{ges}{str}{int}
         \item \idh{Fahrzeuge lenken}{wis}{int}{kon}
+        \item \idh{Fleischer}{str}{str}{kon}
         \item \idh{Gerber}{str}{str}{int}
+        \item \idh{Glaskunst}{ges}{ges}{int}
         \item \idh{Handel}{wei}{chr}{chr}
-        \item TODO: others
+        \item \idh{Heilmittelkunde}{wei}{wei}{chr}
+        \item \idh{Heilmittelkunde}{wei}{wei}{int}
+        \item \idh{Holzbearbeitung}{wei}{str}{kon}
+        \item \idh{Kartographie}{wei}{ges}{ges}\footnote{Diese Fertigkeit ist auch notwendig um Karten lesen zu können.}
+        \item \idh{Kochen}{wei}{ges}{int}
+        \item \idh{Malen \& Zeichnen}{int}{int}{ges}
+        \item \idh{Maurer}{str}{str}{ges}
+        \item \idh{Schlossknacken}{wei}{ges}{ges}
+        \item \idh{Schmied}{str}{str}{kon}
+        \item \idh{Schnaps brennen}{wei}{int}{int}
+        \item \idh{Schneider}{wei}{int}{ges}
+        \item \idh{Steinmetz}{str}{str}{kon}
+        \item \idh{Töpfer}{str}{str}{ges}
+        \item \idh{Webkunst}{ges}{ges}{wei}
     \end{itemize}
 \end{multicols}
 
 \paragraph{Gaben (\SP[16])}
+
+\index{Fertigkeiten!Gaben}Gaben bezeichnen weitere Talente die ein Charakter in der Konversation (zum Beispiel \emph{Empathie}), im Kampf (zum Beispiel \emph{Kräfteschub}) oder auch bei der Analyse (zum Beispiel \emph{Feines Näschens}) verwenden kann. Auf sie wird, wie auf alle anderen Talentgruppen auch, mit einem \dice{}{20} geworfen. Es gibt sechs (mögliche) Gaben:
+\begin{multicols}{2}
+    \def\idgg#1#2{\index{Fertigkeiten!Gaben!#1 \emph{\smaller(#2)}}#1 (#2)}%
+    \def\idg#1#2#3#4{\idgg{#1}{\ability{#2}, \ability{#3}, \ability{#4}}}%
+    \begin{itemize}
+        \item \idg{Empathie}{chr}{chr}{chr}
+        \item \idg{Feines Näschen}{Ges}{Ges}{Ges}
+        \item \idg{Instinkt}{int}{int}{int}
+        \item \idg{Kräfteschub}{str}{str}{str}
+        \item \idg{Magiegespür}{wei}{wei}{wei}
+        \item \idg{Talentschub}{kon}{kon}{kon}
+    \end{itemize}
+\end{multicols}
+
+\subsection{Magie}
+
+\index{Magie}\imp{Magie} ist in ihrer Funktionsweise etwas anders als die anderen Fertigkeiten. Es existieren vier Magie-Zweige, die im folgenden einzeln betrachtet werden. 
+
+\begin{wrapfigure}[8]{r}{0.3\linewidth}
+    \centering\begin{tikzpicture}
+        \SpellCard{example}{Examplarius}{6}{4}{2}{3}{Dies ist ein Beispiel\-zauber. Er kann nichts und das ist auch gut so. Glaub ich.}
+    \end{tikzpicture}
+    \label{fig:example-spell}
+\end{wrapfigure}
+Die \index{Magie!Zweige}Zweige müssen von links nach rechts durchlaufen werden. Ein durchgehender Pfeil kennzeichnet, dass die Komponente eine \emph{verbindliche} Vorbedingung ist, um den nächsten Spruch zu erwerben. Eine gestrichelte Linie kennzeichnet, dass nur mindestens einer der vorherigen Sprüche erlernt sein muss\footnote{Oder anders: Jeder Zweig untergliedert sich in fünf Abschnitte, wobei um einen Spruch aus Abschnitt 4 zu lernen ein Spruch aus Abschnitt 3 gelernt sein muss, für den ein Spruch aus Abschnitt 2 gelernt sein muss und so weiter \ldots}.
+
+
+Wir betrachten zunächst einmal, wie eine \index{Magie!Spruchkarte}\emph{Spruchkarte} aufgebaut ist. Wunderhübsch und oben präsentiert sich der der Bezeichner des Zaubers. Darunter ist eine kurze Beschreibung der Wirkung. Links unten mittels \MP{} kennzeichnen sich die Manakosten, die das Wirken des Zaubers mitsich bringen. Dahinter steht die Zeit in Runden, welche der Zauber zur Vorbereitung benötigt. Ein Zauber mit einer Vorbereitungszeit von 0, kann direkt eingesetzt werden.
+Unten rechts befinden sich die Kosten um den Zauber zu Erwerben. Die \SP{}-Punkte für die Magie können durch Levelaufstiege errungen werden.
+
+\paragraph{Allgemein-Magie}
+
+Der \emph{Ruf der Ahnen} schließt übrigens den Zugriff auf Gedanken ein.
+
+\begin{center}
+    \begin{tikzpicture}
+        \SpellCard[0,0]{1}{Magischer Unterstützer}{5}{3}{1}{5}{Erleichert die nächste Probe um 4.}
+
+        \SpellCard[6,0]{2}{Meditation+}{8}{6}{Nacht}{0}{Meditation erlaubt das Regenerieren von je \dice{2}{6} Leven \emph{und} Mana.}
+
+        \SpellCard[12,0]{3}{Magischer Friede}{11}{9}{4}{4}{Entfernt alle negativen Effekte wie \emph{Wut}, \emph{Hass}, \ldots}
+
+        \SpellCard[9,-4.5]{4}{Teleport}{13}{11}{1+}{5}{Ermöglicht 2 Meter (+1 Meter pro Runde und \MP[1]; Maximum: 7 Meter) zu überbrücken. Durchdringt nichtmagisches.}
+
+        \SpellCard[3,-4.5]{5}{Ruf der Ahnen}{13}{12}{0}{9}{Erlaubt es durch die (unverweste) Leiche ein totes Lebewesen für drei Runden zurückzurufen. Der Beschwörer hat die Kontrolle.}
+
+        \graph[edge={-Kite}]{(1) -> (2) -> (3) -> (4) -> (5)};
+    \end{tikzpicture}
+\end{center}

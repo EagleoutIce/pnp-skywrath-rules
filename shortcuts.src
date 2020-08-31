@@ -8,11 +8,6 @@
 % used by the index
 \def\setLinkColor#1{\hypersetup{linkcolor=#1}}
 
-% specific and global points
-\newcommand*\SP[1][]{\ifx\\#1\\\else#1\;\fi{\smaller\faCircleThin}}
-\newcommand*\GP[1][]{\ifx\\#1\\\else#1\;\fi{\smaller\faCircle}}
-
-
 \newenvironment{sccenter}
  {\setlength\parskip{4.5pt}\par\nopagebreak\centering}
  {\par\noindent\ignorespacesafterend}
@@ -23,3 +18,26 @@
 
 \colorlet{ability}{dice}
 \def\ability#1{\textcolor{ability}{\MakeUppercase{#1}}}
+
+% specific and global points
+\newcommand*\SP[1][]{\ifx\\#1\\\else#1\;\fi{\smaller\faCircleThin}}
+\newcommand*\GP[1][]{\ifx\\#1\\\else#1\;\fi{\smaller\faCircle}}
+\newcommand*\MP[1][]{\ifx\\#1\\\else#1\;\fi{\smaller\color{dice}\faCircle}}
+
+%#1 coordinates
+%#2 Spell id
+%#3 Spell name
+%#4 buy cost SP
+%#5 buy cost GP
+%#6 recovery time
+%#7 use cost
+%#8 description
+\newcommand*\SpellCard[8][0,0]{%
+    \node[rectangle, rounded corners=2pt,text width=4.5cm,draw=cprimary,fill=cprimary!10!white,fill opacity=0.6,minimum height=2.5cm,inner sep=4pt] (#2) at (#1) {\color{black}%
+        {\centering\LARGE\decoFont{#3}\smallskip\par}
+        {\small\parbox[t][1.65cm]{\linewidth}{#8}}\hbox{}\vfill~\\%
+         \hbox{}{\footnotesize\MP[#7],\quad #6\,$\mathcal{R}$}\hfill{\scriptsize\SP[#4]\,/\,\GP[#5]}%
+    };
+}
+
+\usetikzlibrary{graphs,arrows.meta}
