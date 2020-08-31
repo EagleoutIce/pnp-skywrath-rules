@@ -105,7 +105,7 @@ Die Waffen nicht offen zu tragen heißt aber nicht gleichsam, dass ihr sie verst
 \end{wrapfigure}
 
 \def\awimp#1{\index{Charakter!Angriffswerte!#1}\imp{#1}}
-\label{char:attack}\index{Charakter!Angriffswerte}Für den Angriff gibt es zwei grundlegende Werte, die \awimp{Attacke (ATK)} wie auch \awimp{Initiative INI}.
+\label{char:attack}\index{Charakter!Angriffswerte}Für den Angriff gibt es zwei grundlegende Werte, die \awimp{Attacke (\ability{atk})} wie auch \awimp{Initiative (\ability{ini})}.
 Für letztere sind niedere Werte besser, da ein Zug bei jedem vielfachen des hochzählenden Initiativwertes ausgeführt werden darf. 
 Beide Werte werden von mir festgelegt und werden auf Basis der anderen
 Fertigkeiten im Folgenden berechnet\footnote{Die genaue Formel steht noch aus.}.
@@ -124,7 +124,7 @@ Fertigkeiten im Folgenden berechnet\footnote{Die genaue Formel steht noch aus.}.
 Es gibt sechs große Werte die jeweils auf eine \dice{}{20} Probe abzielen. 
 
 \def\hwimp#1{\index{Charakter!Hauptwerte!#1}\imp{#1}}
-\index{Charakter!Hauptwerte}\label{char:strength}Wir kennen die folgenden sechs Werte: \hwimp{Stärke (STR)}, \hwimp{Geschicklichkeit (GES)}, \hwimp{Konsitution (KON)}, \hwimp{Intuition (INT)}, \hwimp{Weisheit (WEI)}, \hwimp{Charisma (CHR)}.
+\index{Charakter!Hauptwerte}\label{char:strength}Wir kennen die folgenden sechs Werte: \hwimp{Stärke (\ability{str})}, \hwimp{Geschicklichkeit (\ability{ges})}, \hwimp{Konsitution (\ability{kon})}, \hwimp{Intuition (\ability{int})}, \hwimp{Weisheit (\ability{wei})}, \hwimp{Charisma (\ability{chr})}.
 Alle diese Werte starten mit einer 7, zu Beginn habt ihr 6 Punkte, die
 ihr \(1:1\) auf diese verteilen dürft.
 Anschließend können \GP{} eingesetzt werden um die Punkte weiter zu steigern.
@@ -168,13 +168,13 @@ Es gibt keine (künstliche) Obergrenze für das Steigern der Fertigkeiten. In de
     \def\idnk#1{\index{Fertigkeiten!Nahkampf!#1}#1}%
     \begin{itemize}
         \item \idnk{Dolche}
+        \item \idnk{Faustkampf}
+        \item \idnk{Fechtwaffen}
         \item \idnk{Peitschen}
         \item \idnk{Schwerter}
-        \item \idnk{Stäbe}
-        \item \idnk{Fechtwaffen}
         \item \idnk{Speere}
+        \item \idnk{Stäbe}
         \item \idnk{Zweihänder}
-        \item \idnk{Faustkampf}
     \end{itemize}
 \end{multicols}
 Auf die Kategorien wird mittels des \link[char:attack]{Attacke}-Werts direkt gewürfelt. Da nur ein Würfelwurf erfolgt ergeben die Werte hier zusammen mit dem Angriffs-Wert den Würfelwurf der im Falle eines Angriffs zu leisten ist. 
@@ -187,13 +187,13 @@ Auf die Kategorien wird mittels des \link[char:attack]{Attacke}-Werts direkt gew
     \def\idfk#1{\index{Fertigkeiten!Fernkampf!#1}#1}%
     \begin{itemize}
         \item \idfk{Armbrust}
-        \item \idfk{Bogen}
         \item \idfk{Blasrohr}
-        \item \idfk{Wurfmesser}
-        \item \idfk{Wurfspeere}
-        \item \idfk{Pistolen}
+        \item \idfk{Bogen}
         \item \idfk{Gewehre}
         \item \idfk{Granaten}
+        \item \idfk{Pistolen}
+        \item \idfk{Wurfmesser}
+        \item \idfk{Wurfspeere}
     \end{itemize}
 \end{multicols}
 Auch auf diese Kategorien wird mittels des \link[char:attack]{Attacke}-Werts direkt gewürfelt.
@@ -208,26 +208,103 @@ Jeder Wurf ist, wie sonst auch, mit einem \dice{}{20} durchzuführen.
     \def\idk#1#2#3#4{\idkk{#1}{\ability{#2}, \ability{#3}, \ability{#4}}}%
     \begin{itemize}
         \item \idk{Athletik}{str}{ges}{kon}
-        \item \idk{Reiten}{kon}{kon}{ges}
         \item \idk{Bedrohen}{str}{str}{chr}
         \item \idk{Diebstahl}{ges}{ges}{chr}
         \item \idk{Gauklerei}{ges}{ges}{chr}
-        \item \idk{Schleichen}{kon}{ges}{ges}
         \item \idk{Klettern}{str}{str}{kon}
-        \item \idk{Zechen}{kon}{kon}{kon}
         \item \idk{Körperbeherrschung}{kon}{str}{str}
+        \item \idk{Reiten}{kon}{kon}{ges}
+        \item \idk{Schleichen}{kon}{ges}{ges}
         \item \idk{Schwimmen}{kon}{kon}{str}
-        \item \idk{Tanzen}{ges}{ges}{int}
         \item \idk{Sinnesschärfe}{int}{int}{int}
+        \item \idk{Tanzen}{ges}{ges}{int}
+        \item \idk{Zechen}{kon}{kon}{kon}
     \end{itemize}
 \end{multicols}
 
 \paragraph{Gesellschaftliches/Soziales (\SP[16])}
 
+\index{Fertigkeiten!Gesellschaftliches}Dieser Abschnitt zählt neun Kategorien auf die jeweils wieder mit einem \dice{}{20} geworfen wird:
+\begin{multicols}{2}
+    \def\idgg#1#2{\index{Fertigkeiten!Gesellschaftliches!#1 \emph{\smaller(#2)}}#1 (#2)}%
+    \def\idg#1#2#3#4{\idgg{#1}{\ability{#2}, \ability{#3}, \ability{#4}}}%
+    \begin{itemize}
+        \item \idg{Begeistern}{chr}{chr}{int}
+        \item \idg{Betören}{chr}{chr}{int}
+        \item \idg{Eloquenz}{wei}{ges}{chr}
+        \item \idg{Lügen}{int}{chr}{chr}
+        \item \idg{Manipulieren}{str}{chr}{int}
+        \item \idg{Menschenkenntnis}{wei}{int}{int}
+        \item \idg{Schauspiel}{kon}{int}{chr}
+        \item \idg{Selbstbeherrschung}{kon}{kon}{chr}
+        \item \idg{Verkleidung}{wei}{wei}{ges}
+    \end{itemize}
+\end{multicols}
+
 \paragraph{Natur und Umwelt (\SP[16])}
+
+\index{Fertigkeiten!Natur \& Umwelt}Auch dieser Block umfasst neun Kategorien auf die mit einem \dice{}{20} geworfen wird:
+\begin{multicols}{2}
+    \def\idnn#1#2{\index{Fertigkeiten!Natur \& Umwelt!#1 \emph{\smaller(#2)}}#1 (#2)}%
+    \def\idn#1#2#3#4{\idnn{#1}{\ability{#2}, \ability{#3}, \ability{#4}}}%
+    \begin{itemize}
+        \item \idn{Angeln}{str}{wei}{int}
+        \item \idn{Fährtensuche}{wei}{wei}{int}
+        \item \idn{Fallenstellen}{str}{wei}{int}
+        \item \idn{Fesseln}{str}{str}{wei}
+        \item \idn{Orientierung}{wei}{wei}{int}
+        \item \idn{Pflanzenkunde}{wei}{wei}{kon}
+        \item \idn{Wetterkenntnis}{int}{int}{wei}
+        \item \idn{Wildnisleben}{str}{str}{int}
+        \item \idn{Zähmung}{int}{int}{wis}
+    \end{itemize}
+\end{multicols}
 
 \paragraph{Wissen (\SP[28])}
 
+\index{Fertigkeiten!Wissen}Dieser Abschnitt umfasst 20 Kategorien, wobei die Kategorien \emph{Sprache} und \emph{Schrift} besonders sind. Da sie als \say{Lesen und Schreiben} Talente nicht \say{bewürfelt} werden müssen. % TODO: link
+
+Die Kategorien \emph{Magie} und \emph{Magiekunde} unterscheidet, dass erstere praktisch (also die aktive Anwendung) und letztere eher das theoretische Wissen über die Magie bezeichnet.
+\begin{multicols}{2}
+    \def\idww#1#2{\index{Fertigkeiten!Wissen!#1 \emph{\smaller(#2)}}#1 (#2)}%
+    \def\idw#1#2#3#4{\idww{#1}{\ability{#2}, \ability{#3}, \ability{#4}}}%
+    \begin{itemize}
+        \item \idw{Anatomie}{wei}{wei}{str}
+        \item \idw{Astronomie}{wei}{ges}{int}
+        \item \idw{Baukunst}{wei}{str}{str}
+        \item \idw{Geographie}{wei}{ges}{ges}
+        \item \idw{Geschichte}{wei}{kon}{kon}
+        \item \idw{Gossenwissen}{wei}{ges}{kon}
+        \item \idw{Kriegskunst}{wei}{str}{str}
+        \item \idw{Kryptographie}{we }{int}{int}
+        \item \idw{Legenden \& Sagen}{wei}{int}{chr}
+        \item \idw{Magie}{wei}{wei}{wei}
+        \item \idw{Magiekunde}{wei}{chr}{wei}
+        \item \idw{Mathematik}{wei}{int}{wei}
+        \item \idw{Mechanik}{wei}{str}{int}
+        \item \idw{Philosophie}{wei}{int}{int}
+        \item \idw{Rechtskunde}{wei}{chr}{chr}
+        \item \idww{Schrift}{1-5}
+        \item \idww{Sprache}{1-5}
+        \item \idw{Sprachkunde}{wei}{chr}{chr}
+        \item \idw{Steinkunde}{wei}{int}{int}
+        \item \idw{Viehzucht}{wei}{int}{int}
+    \end{itemize}
+\end{multicols}
+
 \paragraph{Handwerk (\SP[28])}
+
+\index{Fertigkeiten!Handwerk}Die Handwerk umfasst 27 Kategorien auf welche die Punkte verteilt werden können. Es wird, wie überall sonst auch ein \dice{}{20} geworfen:
+\begin{multicols}{2}
+    \def\idhh#1#2{\index{Fertigkeiten!Handwerk!#1 \emph{\smaller(#2)}}#1 (#2)}%
+    \def\idh#1#2#3#4{\idhh{#1}{\ability{#2}, \ability{#3}, \ability{#4}}}%
+    \begin{itemize}
+        \item \idh{Ackerbau}{kon}{str}{int}
+        \item \idh{Fahrzeuge lenken}{wis}{int}{kon}
+        \item \idh{Gerber}{str}{str}{int}
+        \item \idh{Handel}{wei}{chr}{chr}
+        \item TODO: others
+    \end{itemize}
+\end{multicols}
 
 \paragraph{Gaben (\SP[16])}
